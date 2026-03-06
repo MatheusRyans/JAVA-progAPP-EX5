@@ -8,6 +8,8 @@ public class ContaBancaria {
         this.titular = titular;
         this.saldo = saldo;
     }
+    public ContaBancaria() {
+    }
 
     public String getNumeroConta() {
         return numeroConta;
@@ -33,21 +35,21 @@ public class ContaBancaria {
         this.saldo = saldo;
     }
 
-    public String depositar(double valorDeposito){
+    public void depositar(double valorDeposito){
 
         if (valorDeposito > 0) {
             this.saldo += valorDeposito;
-            return ("Valor de " + valorDeposito + " depositado com sucesso!!");
+            System.out.println("Valor de " + valorDeposito + " depositado com sucesso!!");
         }else{
-            return ("Valor de depósito deve ser maior que 0");
+            System.out.println("Valor de depósito deve ser maior que 0");
         }
     }
 
-    public String sacar(double valorSaque){
+    public void sacar(double valorSaque){
         if (valorSaque < 0) {
-            return ("Valor de saque deve ser maior que 0");
+            System.out.println("Valor de saque deve ser maior que 0");
         } else if (valorSaque > saldo) {
-            return ("Valor de saque não pode ser maior que o saldo da conta");
+            System.out.println("Valor de saque não pode ser maior que o saldo da conta");
         }
         else {
 
@@ -78,10 +80,10 @@ public class ContaBancaria {
 
                 int valor1 = (int)valorSaque;
 
-            return String.format(
-                    "Saque de R$%.2f efetuado!\nNotas: 100x%d, 50x%d, 20x%d, 10x%d, 5x%d, 2x%d, 1x%d",
-                    aux, valor100, valor50, valor20, valor10, valor5, valor2, valor1
-            );
+            System.out.printf("Saque de R$ %.2f efetuado!%n", aux);
+            System.out.println();
+            System.out.printf("Notas: 100x%d, 50x%d, 20x%d, 10x%d, 5x%d, 2x%d, 1x%d%n",
+                    valor100, valor50, valor20, valor10, valor5, valor2, valor1);
             }
         }
 
