@@ -48,7 +48,7 @@ public class ContaBancaria {
     public void sacar(double valorSaque){
         if (valorSaque < 0) {
             System.out.println("Valor de saque deve ser maior que 0");
-        } else if (valorSaque > saldo) {
+        } else if (valorSaque > this.saldo) {
             System.out.println("Valor de saque não pode ser maior que o saldo da conta");
         }
         else {
